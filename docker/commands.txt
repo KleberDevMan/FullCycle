@@ -1,0 +1,59 @@
+# list actives containers 
+docker ps
+
+  # containers que executaram em algum momento
+  docker ps -a
+
+  # stop container
+  docker stop CONTAINER
+
+  # remove container
+  docker rm CONTAINER
+
+    # remove container running
+    docker rm CONTAINER -f
+
+# create (se precisar) e start um container (roda o entrypoint.sh) 
+docker run hello-world
+  
+  # especificando a versao da imagem
+  docker run hello-world:latest
+
+  # manter o modo interativo (attach)
+  -it
+
+  # remover o container do historico assim que eu terminar o trabalho
+  --rm
+
+  # desatachar o meu terminal do processo que ficará rodando
+  -d
+
+  # colocar um nome melhor
+  --name
+
+# start um container ja existente (geralmente usamos mais o run msm)
+docker start interesting_zhukovsky
+
+# nginx: Um Web Server que fica com a porta 80/tcp aberta para vc se conectar nela
+
+  # redireciona a port 8080 do meu host para a port 80 do meu container
+  docker run -p 8080:80 nginx
+
+# exec command into active container
+docker exec -it nginx bash
+
+  # isntall vim into container docker
+  apt-get update
+  apt-get install vim
+
+# BIND MOUNTS: 
+  colocar pastas dentro de um container
+    docker run -d --name nginx -p 8080:80 -v ~/Develop/DockerProjects/html/:/usr/share/nginx/html nginx
+  ou melhor
+    docker run -d --name nginx -p 8080:80 -mount type=bind,source="$(pwd)"/html/,target=/usr/share/nginx/html nginx
+
+# VOLUMES: 
+  tudo o que for colocado no volume (seja pelo container ou pelo host) permanecerá lá, compartilhado 
+  com todos os container que estiverem usando aquele volume
+    docker run -d --name nginx -p 8080:80 --mount type=volume,source=meuvolume,target=/app nginx
+

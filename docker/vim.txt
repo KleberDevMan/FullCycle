@@ -1,0 +1,17 @@
+# enter into insert mode
+i
+
+# exit insert mode
+esc
+
+# save
+:w
+
+# exit
+:q
+
+# exit without save
+:q!
+
+# exit with save
+:wq
