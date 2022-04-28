@@ -1,4 +1,6 @@
-# list actives containers 
+---------------------------------------------------- LIST/PS CONTAINER
+
+# list actives containers
 docker ps
 
   # containers que executaram em algum momento
@@ -12,6 +14,8 @@ docker ps
 
     # remove container running
     docker rm CONTAINER -f
+
+---------------------------------------------------- CREATE/RUN CONTAINER
 
 # create (se precisar) e start um container (roda o entrypoint.sh) 
 docker run hello-world
@@ -31,6 +35,8 @@ docker run hello-world
   # colocar um nome melhor
   --name
 
+---------------------------------------------------- START CONTAINER
+
 # start um container ja existente (geralmente usamos mais o run msm)
 docker start interesting_zhukovsky
 
@@ -39,12 +45,22 @@ docker start interesting_zhukovsky
   # redireciona a port 8080 do meu host para a port 80 do meu container
   docker run -p 8080:80 nginx
 
+---------------------------------------------------- EXEC IN CONTAINER
+
 # exec command into active container
 docker exec -it nginx bash
 
   # isntall vim into container docker
   apt-get update
   apt-get install vim
+
+---------------------------------------------------- REMOVE
+
+# remove containers não ativos e inativos
+docker rm $(docker ps -a -q) -f
+
+
+---------------------------------------------------- VOLUMES
 
 # BIND MOUNTS: 
   colocar pastas dentro de um container
@@ -56,4 +72,12 @@ docker exec -it nginx bash
   tudo o que for colocado no volume (seja pelo container ou pelo host) permanecerá lá, compartilhado 
   com todos os container que estiverem usando aquele volume
     docker run -d --name nginx -p 8080:80 --mount type=volume,source=meuvolume,target=/app nginx
+
+---------------------------------------------------- IMAGENS
+# cria uma imagem personalizado local
+	docker build -t kleberdevmen/nginx-with-vim:latest .
+
+# remove uma image
+  docker rmi kleberdevmen/nginx-with-vim
+
 
