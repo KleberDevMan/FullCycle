@@ -1,4 +1,5 @@
 ---------------------------------------------------- LIST/PS CONTAINER
+docker ps --help
 
 # list actives containers
 docker ps
@@ -36,6 +37,7 @@ docker run hello-world
   --name
 
 ---------------------------------------------------- START CONTAINER
+docker start --help
 
 # start um container ja existente (geralmente usamos mais o run msm)
 docker start interesting_zhukovsky
@@ -46,6 +48,7 @@ docker start interesting_zhukovsky
   docker run -p 8080:80 nginx
 
 ---------------------------------------------------- EXEC IN CONTAINER
+docker exec --help
 
 # exec command into active container
 docker exec -it nginx bash
@@ -55,12 +58,13 @@ docker exec -it nginx bash
   apt-get install vim
 
 ---------------------------------------------------- REMOVE
+docker rm --help
 
 # remove containers não ativos e inativos
 docker rm $(docker ps -a -q) -f
 
-
 ---------------------------------------------------- VOLUMES
+docker run --help
 
 # BIND MOUNTS: 
   colocar pastas dentro de um container
@@ -74,10 +78,38 @@ docker rm $(docker ps -a -q) -f
     docker run -d --name nginx -p 8080:80 --mount type=volume,source=meuvolume,target=/app nginx
 
 ---------------------------------------------------- IMAGENS
+docker image --help
+docker rmi --help
+
 # cria uma imagem personalizado local
 	docker build -t kleberdevmen/nginx-with-vim:latest .
 
 # remove uma image
   docker rmi kleberdevmen/nginx-with-vim
 
+
+---------------------------------------------------- NETWORKS
+docker network --help
+
+tipos:
+  - brige (default)     container <-> containerddsd
+  - host                host <-> container
+  - overlay             containers em hosts diferentes
+
+Voce pode:
+1. criar novas redes - docker network create
+2. adicionar containers em uma rede especifica - docker network connect
+3. consigo inspecicionar os containers que estão em uma determinada rede - docker network inspect
+
+Obs.
+  quanto você nao especifica uma rede, o container é criado na brige. Na bridge, só conseguimos pingar outro container se passarmos o IP dele.
+  em uma redepersonalizada não. Você consegue pingar um no outro atraves do nome do container.
+
+  container acessando nossa máquina: host.docker.internal
+
+---------------------------------------------------- DOCKERIZANDO UMA APLICACAO
+1. instalar a aplicacao em um container e anotar todos os passos em um Dockerfile (use aspas duplas)
+2. buidar a imagem (lembrando que o segundo build é sempre mais rápido. Ele cacheia as alterações)
+3. colocar o container para rodar (run)
+4. subir para docker rub
 
