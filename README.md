@@ -1,5 +1,5 @@
 ### Full Cycle Developer - My Annotations
-<a href="https://imersao.fullcycle.com.br/page/lancamento/"><sub>reference for course</sub></a>
+<a href="https://imersao.fullcycle.com.br/page/lancamento/">reference for course</a>
 
 Learning about:
 
