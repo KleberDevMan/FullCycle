@@ -1,0 +1,8 @@
+Infraestrutura Global
+  - Regions
+  - Availability Zones (AZs)
+  - Edge Locations (pontos de presença)
+  - Scope of service: AZs, Region, Global
+
+Fundamentos de Segurança
+  - 
