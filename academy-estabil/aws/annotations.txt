@@ -7,3 +7,7 @@ Infraestrutura Global
 Fundamentos de Segurança
   - IAM - Identify Access Management (users, groups, polices, roles)
 
+Networking na AWS (hard)
+  - VPC, Subnets, Route Table, Internet Gateway, 
+    Virtual Private Gateway, NAT gateway e NAT Instance,
+    Security Groups, Network ACL, 
