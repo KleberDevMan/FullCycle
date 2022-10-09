@@ -5,4 +5,5 @@ Infraestrutura Global
   - Scope of service: AZs, Region, Global
 
 Fundamentos de Segurança
-  - 
+  - IAM - Identify Access Management (users, groups, polices, roles)
+
