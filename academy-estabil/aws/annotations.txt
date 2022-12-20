@@ -16,3 +16,6 @@ Elastic Compute Cloud - EC2
   - instacies family, disk types, metadata, metauser,
     elastic container interface, AMI
 
+Armazenamento EBS e S3
+  - EBS e S3
+
