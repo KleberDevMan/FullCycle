@@ -19,3 +19,5 @@ Elastic Compute Cloud - EC2
 Armazenamento EBS e S3
   - EBS e S3
 
+Relational Data Base
+  - RDS
