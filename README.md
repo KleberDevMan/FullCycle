@@ -1,5 +1,6 @@
 ### Full Cycle Developer - My Annotations
-<a href="https://curso.fullcycle.com.br/curso-fullcycle/">reference for course</a>
+<a href="https://curso.fullcycle.com.br/curso-fullcycle/">reference for course</a> 
+([course brochure](https://drive.google.com/file/d/1IuoWJjUfblsrOIo8nWZWcqmelTOeAYnS/view?usp=sharing))
 
 Learning about:
 
